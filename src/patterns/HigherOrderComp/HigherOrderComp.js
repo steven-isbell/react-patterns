@@ -33,9 +33,12 @@ class HigherOrder extends Component {
   }
 }
 
-export default formatDates({
-  birthday: "2017-07-10",
-  anniversary: 1515774685,
-  kidBirthday: "28-Mar-2017",
-  otherDate: "02/08/2018"
-})(HigherOrder);
+export default formatDates(
+  {
+    birthday: "2017-07-10",
+    anniversary: 1515774685,
+    kidBirthday: "28-Mar-2017",
+    otherDate: "02/08/2018"
+  },
+  "YYYY-MM-DD"
+)(HigherOrder);

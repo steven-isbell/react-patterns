@@ -5,20 +5,12 @@ import moment from "moment";
 // format before passing them along to the component.
 // We could use this to maintain date formats across a calendar or scheduling service
 
-const formatDates = dateProps => {
+const formatDates = (dateProps, format = "MM-DD-YYYY") => {
   let newProps = {};
-  if (Object.hasOwnProperty("format")) {
-    for (let key in dateProps) {
-      if (key !== "format")
-        newProps[key] = moment(dateProps[key]).format(dateProps["format"]);
-    }
-    newProps.message = `Formatted as ${dateProps.format}`;
-  } else {
-    for (let key in dateProps) {
-      newProps[key] = moment(dateProps[key]).format("MM/DD/YYYY");
-    }
-    newProps.message = "No format provided, default format applied";
+  for (let key in dateProps) {
+    newProps[key] = moment(dateProps[key]).format(format);
   }
+  newProps.message = `Formatted as ${format}`;
   return WrappedComponent =>
     class extends Component {
       render() {
