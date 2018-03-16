@@ -31,3 +31,5 @@ There are two examples in the `hoc/` directory.
 `extendComponent.js` is a HOC that takes in a Component and renders it inside another Component. Here we can add lifecycle hooks to a functional Component, we can add methods and state and adjust those dynamically before handing them off to the WrappedComponent. This allows us to add similar functionalites to many components without having to copy/paste or rewrite small bits of functionality that is similar in nature.
 
 Higher Order Components are a powerful way to utilize react's compositional nature to build reusable, extensible component wrappers.
+
+For more examples or to read more about Higher Order Components, checkout the <a href="https://reactjs.org/docs/higher-order-components.html">React Documentation on HOC's</a>.
