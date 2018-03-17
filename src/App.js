@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import HigherOrder from "./patterns/HigherOrderComp/HigherOrderComp";
+import {
+  TextHOC,
+  DatesHOC,
+  MouseHOC
+} from "./patterns/HigherOrderComp/HigherOrderComp";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -12,7 +16,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         {/* Higher Order Components Module */}
-        <HigherOrder />
+        <TextHOC />
+        <DatesHOC />
+        <MouseHOC />
       </div>
     );
   }

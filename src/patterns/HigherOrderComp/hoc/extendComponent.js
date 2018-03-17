@@ -6,6 +6,9 @@ const extendComponent = WrappedComponent => {
   // hook into state, generate methods, generate a list in a container, style components,
   // provide lifecycle hooks to functional components, etc.
 
+  // In this particular example we're adding the ability to track values typed into an input
+  // and styles to format the input appropriately.
+
   // The goal of this wrapper to make code as reusable as necessary
 
   class ExtendedComponent extends Component {
@@ -27,10 +30,10 @@ const extendComponent = WrappedComponent => {
         someNewProp: "This is a new prop",
         styleProp: {
           color: "blue",
-          height: "150px",
           overflow: "scroll",
           width: "200px",
-          margin: "50px auto"
+          margin: "50px auto 10px auto",
+          fontSize: "2em"
         },
         textInput: this.state.textInput,
         handleTextChange: this.handleTextInput

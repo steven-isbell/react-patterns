@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 import extendComponent from "./hoc/extendComponent";
 import formatDates from "./hoc/acceptConfigAndComp";
+import withMouse from "./hoc/withMouse";
 
-// class HigherOrder extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <input
-//           onChange={event => this.props.handleTextChange(event.target.value)}
-//         />
-//         <div style={this.props.styleProp}>
-//           <p>{this.props.textInput}</p>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
+class HigherOrderText extends Component {
+  render() {
+    return (
+      <div style={this.props.styleProp}>
+        <input
+          onChange={event => this.props.handleTextChange(event.target.value)}
+          style={{ width: "100%" }}
+          placeholder="Receiving props from hoc"
+        />
+        <p>{this.props.textInput}</p>
+      </div>
+    );
+  }
+}
 
-// export default extendComponent(HigherOrder);
+export const TextHOC = extendComponent(HigherOrderText);
 
-class HigherOrder extends Component {
+class HigherOrderDates extends Component {
   render() {
     return (
       <div>
@@ -33,7 +34,7 @@ class HigherOrder extends Component {
   }
 }
 
-export default formatDates(
+export const DatesHOC = formatDates(
   {
     birthday: "2017-07-10",
     anniversary: 1515774685,
@@ -41,4 +42,22 @@ export default formatDates(
     otherDate: "02/08/2018"
   },
   "YYYY-MM-DD"
-)(HigherOrder);
+)(HigherOrderDates);
+
+class HigherOrderMouse extends Component {
+  render() {
+    // Instead of maintaining our own state,
+    // we get the mouse position as a prop!
+    const { x, y } = this.props.mouse;
+
+    return (
+      <div style={{ height: "500px" }}>
+        <h1>
+          The mouse position is ({x}, {y})
+        </h1>
+      </div>
+    );
+  }
+}
+
+export const MouseHOC = withMouse(HigherOrderMouse);
