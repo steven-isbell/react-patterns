@@ -35,3 +35,5 @@ There are three examples in the `hoc/` directory.
 Higher Order Components are a powerful way to utilize react's compositional nature to build reusable, extensible component wrappers.
 
 For more examples or to read more about Higher Order Components, checkout the <a href="https://reactjs.org/docs/higher-order-components.html">React Documentation on HOC's</a>.
+
+Note: HOC's can often be rewritten utilizing Render Props and in that regard becomes a stylistic decision.
