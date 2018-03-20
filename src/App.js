@@ -7,8 +7,7 @@ import {
 } from "./patterns/HigherOrderComp/HigherOrderComp";
 
 import RenderProps from "./patterns/RenderProps/RenderProps";
-
-import Test from "./patterns/RenderProps/render/Test";
+import AddText from "./patterns/RenderProps/render/AddText";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -25,11 +24,8 @@ class App extends Component {
         <TextHOC />
         <DatesHOC />
         <MouseHOC />
-        <Test
-          render={props => {
-            return <RenderProps {...props} />;
-          }}
-        />
+        {/* Render Props Module */}
+        <AddText render={props => <RenderProps {...props} />} />
       </div>
     );
   }
