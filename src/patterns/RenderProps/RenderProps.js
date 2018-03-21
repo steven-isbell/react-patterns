@@ -4,8 +4,16 @@ class RenderProps extends Component {
   render() {
     return (
       <div style={this.props.style}>
-        <input onChange={event => this.props.handleTextInput(event)} />
-        {this.props.textInput}
+        {this.props.textInput ? (
+          <h3>{this.props.textInput}</h3>
+        ) : (
+          <h3>Render Props Example</h3>
+        )}
+
+        <input
+          style={{ margin: " 20px auto", width: "100px" }}
+          onChange={event => this.props.handleTextInput(event)}
+        />
       </div>
     );
   }

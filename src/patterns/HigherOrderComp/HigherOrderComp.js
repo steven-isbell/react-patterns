@@ -51,7 +51,7 @@ class HigherOrderMouse extends Component {
     const { x, y } = this.props.mouse;
 
     return (
-      <div style={{ height: "500px" }}>
+      <div>
         <h1>
           The mouse position is ({x}, {y})
         </h1>
