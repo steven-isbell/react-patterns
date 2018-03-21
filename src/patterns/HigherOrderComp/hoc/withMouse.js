@@ -22,7 +22,7 @@ const withMouse = Component => {
 
     render() {
       return (
-        <div style={{ height: "100%" }} onMouseMove={this.handleMouseMove}>
+        <div onMouseMove={this.handleMouseMove}>
           <Component {...this.props} mouse={this.state} />
         </div>
       );
