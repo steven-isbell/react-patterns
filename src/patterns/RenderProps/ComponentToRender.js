@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class RenderProps extends Component {
+class ComponentToRender extends Component {
   render() {
     return (
       <div style={this.props.style}>
@@ -11,4 +11,4 @@ class RenderProps extends Component {
   }
 }
 
-export default RenderProps;
+export default ComponentToRender;

@@ -6,7 +6,7 @@ import {
   MouseHOC
 } from "./patterns/HigherOrderComp/HigherOrderComp";
 
-import RenderProps from "./patterns/RenderProps/RenderProps";
+import ComponentToRender from "./patterns/ComponentToRender/ComponentToRender";
 import AddText from "./patterns/RenderProps/render/AddText";
 
 import logo from "./logo.svg";
@@ -25,7 +25,7 @@ class App extends Component {
         <DatesHOC />
         <MouseHOC />
         {/* Render Props Module */}
-        <AddText render={props => <RenderProps {...props} />} />
+        <AddText render={props => <ComponentToRender {...props} />} />
       </div>
     );
   }
