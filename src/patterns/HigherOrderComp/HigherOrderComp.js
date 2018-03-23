@@ -12,7 +12,7 @@ class HigherOrderText extends Component {
           style={{ width: "100%" }}
           placeholder="Receiving props from hoc"
         />
-        <p>{this.props.textInput}</p>
+        <p>{this.props.textInput || "HOC Example"}</p>
       </div>
     );
   }

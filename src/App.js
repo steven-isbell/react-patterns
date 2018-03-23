@@ -6,7 +6,7 @@ import {
   MouseHOC
 } from "./patterns/HigherOrderComp/HigherOrderComp";
 
-import ComponentToRender from "./patterns/ComponentToRender/ComponentToRender";
+import ComponentToRender from "./patterns/RenderProps/ComponentToRender";
 import AddText from "./patterns/RenderProps/render/AddText";
 
 import logo from "./logo.svg";
@@ -21,11 +21,17 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         {/* Higher Order Components Modules */}
-        <TextHOC />
-        <DatesHOC />
-        <MouseHOC />
+        <div style={{ border: "5px solid black" }}>
+          <h1>Higher Order Components</h1>
+          <TextHOC />
+          <DatesHOC />
+          <MouseHOC />
+        </div>
         {/* Render Props Module */}
-        <AddText render={props => <ComponentToRender {...props} />} />
+        <div style={{ border: "5px solid blue" }}>
+          <h1>Render Props</h1>
+          <AddText render={props => <ComponentToRender {...props} />} />
+        </div>
       </div>
     );
   }
