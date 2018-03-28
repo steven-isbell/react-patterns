@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class TextComponentToRender extends Component {
+export class TextComponent extends Component {
   render() {
     return (
       <div style={this.props.style}>
@@ -15,14 +15,14 @@ export class TextComponentToRender extends Component {
   }
 }
 
-export class MouseComponentToRender extends Component {
+export class MouseComponent extends Component {
   render() {
     return (
       <div style={{ height: "200px", position: "relative" }}>
         <h1>
           Our plane is being moved across the container based on the mouse
           position from the WithMouse Component that is rendering our
-          MouseComponentToRender Component within its render prop.
+          MouseComponent within its render prop.
         </h1>
         <img
           src="https://jundroo.blob.core.windows.net/simpleplanes/GameData/aircraft/352/vRIW46-TopView.png"
@@ -40,7 +40,7 @@ export class MouseComponentToRender extends Component {
   }
 }
 
-export class MouseMathComponentToRender extends Component {
+export class MouseMathComponent extends Component {
   render() {
     const { x, y } = this.props;
     return (
@@ -67,6 +67,38 @@ export class MouseMathComponentToRender extends Component {
         <p>
           Division: {x} / {y} = {x / y}
         </p>
+      </div>
+    );
+  }
+}
+
+export class TargetComponent extends Component {
+  render() {
+    console.log(this.props.targeted);
+    return (
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div>
+          {this.props.imgs.map(img => (
+            <img
+              src={img}
+              style={{ height: "100px", width: "100px", margin: "10px" }}
+              alt="random"
+              key={img}
+            />
+          ))}
+        </div>
+        <div>
+          <h1>Targeted Avenger: </h1>
+          {this.props.targeted ? (
+            <img
+              src={this.props.targeted}
+              style={{ height: "100px", width: "100px" }}
+              alt="random"
+            />
+          ) : (
+            "No Image Selected"
+          )}
+        </div>
       </div>
     );
   }

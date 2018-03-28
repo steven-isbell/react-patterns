@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Here we're creating a reusable mouse tracker by attaching state and a handler to our passed in component.
 
 const withMouse = Component => {
-  return class extends Component {
+  return class extends React.Component {
     constructor(props) {
       super(props);
       this.state = {

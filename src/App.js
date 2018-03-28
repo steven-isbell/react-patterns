@@ -7,15 +7,17 @@ import {
 } from "./patterns/HigherOrderComp/HigherOrderComp";
 
 import {
-  TextComponentToRender,
-  MouseComponentToRender,
-  MouseMathComponentToRender
+  TextComponent,
+  MouseComponent,
+  MouseMathComponent,
+  TargetComponent
 } from "./patterns/RenderProps/ComponentToRender";
 import AddText from "./patterns/RenderProps/render/AddText";
+import WithMouse from "./patterns/RenderProps/render/WithMouse";
+import TargetIdentifier from "./patterns/RenderProps/render/TargetIdentifier";
 
 import logo from "./logo.svg";
 import "./App.css";
-import WithMouse from "./patterns/RenderProps/render/WithMouse";
 
 class App extends Component {
   render() {
@@ -35,11 +37,10 @@ class App extends Component {
         {/* Render Props Module */}
         <div style={{ border: "5px solid blue", height: "auto" }}>
           <h1>Render Props</h1>
-          <AddText render={props => <TextComponentToRender {...props} />} />
-          <WithMouse render={props => <MouseComponentToRender {...props} />} />
-          <WithMouse
-            render={props => <MouseMathComponentToRender {...props} />}
-          />
+          <AddText render={props => <TextComponent {...props} />} />
+          <WithMouse render={props => <MouseComponent {...props} />} />
+          <WithMouse render={props => <MouseMathComponent {...props} />} />
+          <TargetIdentifier render={props => <TargetComponent {...props} />} />
         </div>
       </div>
     );
