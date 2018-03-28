@@ -6,11 +6,16 @@ import {
   MouseHOC
 } from "./patterns/HigherOrderComp/HigherOrderComp";
 
-import ComponentToRender from "./patterns/RenderProps/ComponentToRender";
+import {
+  TextComponentToRender,
+  MouseComponentToRender,
+  MouseMathComponentToRender
+} from "./patterns/RenderProps/ComponentToRender";
 import AddText from "./patterns/RenderProps/render/AddText";
 
 import logo from "./logo.svg";
 import "./App.css";
+import WithMouse from "./patterns/RenderProps/render/WithMouse";
 
 class App extends Component {
   render() {
@@ -28,9 +33,13 @@ class App extends Component {
           <MouseHOC />
         </div>
         {/* Render Props Module */}
-        <div style={{ border: "5px solid blue" }}>
+        <div style={{ border: "5px solid blue", height: "auto" }}>
           <h1>Render Props</h1>
-          <AddText render={props => <ComponentToRender {...props} />} />
+          <AddText render={props => <TextComponentToRender {...props} />} />
+          <WithMouse render={props => <MouseComponentToRender {...props} />} />
+          <WithMouse
+            render={props => <MouseMathComponentToRender {...props} />}
+          />
         </div>
       </div>
     );
