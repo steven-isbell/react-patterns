@@ -16,6 +16,15 @@ import AddText from "./patterns/RenderProps/render/AddText";
 import WithMouse from "./patterns/RenderProps/render/WithMouse";
 import TargetIdentifier from "./patterns/RenderProps/render/TargetIdentifier";
 
+import {
+  CompanyProvider,
+  Company
+} from "./patterns/Context/contextComponents/Company";
+import {
+  ThemeProvider,
+  DivWithTheme
+} from "./patterns/Context/contextComponents/Theme";
+
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -41,6 +50,14 @@ class App extends Component {
           <WithMouse render={props => <MouseComponent {...props} />} />
           <WithMouse render={props => <MouseMathComponent {...props} />} />
           <TargetIdentifier render={props => <TargetComponent {...props} />} />
+        </div>
+        <div style={{ border: "5px solid green" }}>
+          <CompanyProvider>
+            <Company />
+          </CompanyProvider>
+          <ThemeProvider>
+            <DivWithTheme />
+          </ThemeProvider>
         </div>
       </div>
     );
