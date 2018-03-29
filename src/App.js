@@ -25,6 +25,11 @@ import {
   DivWithTheme
 } from "./patterns/Context/contextComponents/Theme";
 
+import {
+  CombinedProviders,
+  DivWithThemeAndCompany
+} from "./patterns/Context/contextComponents/ComanyAndTheme";
+
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -58,6 +63,11 @@ class App extends Component {
           <ThemeProvider>
             <DivWithTheme />
           </ThemeProvider>
+          <br />
+          <br />
+          <CombinedProviders>
+            <DivWithThemeAndCompany />
+          </CombinedProviders>
         </div>
       </div>
     );
