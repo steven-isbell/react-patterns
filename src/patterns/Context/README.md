@@ -1,13 +1,5 @@
 # Context API
 
-Updated Context API
-Safe To Use
-props drilling
-Have to update to alpha version of React (16.3) yarn add react@latest yarn add react-dom@latest
-Providers vs. Consumers
-render props accessing context
-combining providers
-
 The Context API is an existing, but experimental API that exists within React. The official React documentation for the API currently has the headline of `Why Not To Use The Context API`; it continues,
 
 ```
