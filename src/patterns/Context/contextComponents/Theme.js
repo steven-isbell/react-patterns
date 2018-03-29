@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { ThemeContext } from "../Context";
 
+const { Provider, Consumer } = ThemeContext;
+
 export class ThemeProvider extends Component {
   constructor() {
     super();
@@ -20,16 +22,12 @@ export class ThemeProvider extends Component {
       ...this.state,
       changeTheme: this.handleThemeChange
     };
-    return (
-      <ThemeContext.Provider value={data}>
-        {this.props.children}
-      </ThemeContext.Provider>
-    );
+    return <Provider value={data}>{this.props.children}</Provider>;
   }
 }
 
 export const DivWithTheme = () => (
-  <ThemeContext.Consumer>
+  <Consumer>
     {context => (
       <div
         style={{
@@ -48,5 +46,5 @@ export const DivWithTheme = () => (
         </select>
       </div>
     )}
-  </ThemeContext.Consumer>
+  </Consumer>
 );

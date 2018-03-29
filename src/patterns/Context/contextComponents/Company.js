@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { CompanyContext } from "../Context";
 
+const { Provider, Consumer } = CompanyContext;
+
 export class CompanyProvider extends Component {
   constructor() {
     super();
@@ -17,11 +19,7 @@ export class CompanyProvider extends Component {
     };
   }
   render() {
-    return (
-      <CompanyContext.Provider value={this.state}>
-        {this.props.children}
-      </CompanyContext.Provider>
-    );
+    return <Provider value={this.state}>{this.props.children}</Provider>;
   }
 }
 
@@ -30,7 +28,7 @@ export const Company = () => <Organization />;
 const Organization = () => <Team />;
 
 const Team = () => (
-  <CompanyContext.Consumer>
+  <Consumer>
     {context => (
       <div>
         <h1>The DevMountain Team:</h1>
@@ -57,5 +55,5 @@ const Team = () => (
         </div>
       </div>
     )}
-  </CompanyContext.Consumer>
+  </Consumer>
 );
