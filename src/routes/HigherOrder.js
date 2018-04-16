@@ -3,7 +3,8 @@ import React from "react";
 import {
   TextHOC,
   DatesHOC,
-  MouseHOC
+  MouseHOC,
+  MouseAndTextHOC
 } from "../patterns/HigherOrderComp/HigherOrderComp";
 
 const HOC = () => (
@@ -12,6 +13,7 @@ const HOC = () => (
     <TextHOC />
     <DatesHOC />
     <MouseHOC />
+    <MouseAndTextHOC />
   </div>
 );
 

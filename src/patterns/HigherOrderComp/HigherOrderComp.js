@@ -61,3 +61,17 @@ class HigherOrderMouse extends Component {
 }
 
 export const MouseHOC = withMouse(HigherOrderMouse);
+
+class MouseAndText extends Component {
+  render() {
+    return (
+      <div style={this.props.styleProp}>
+        <pre>
+          <code>{JSON.stringify(this.props)}</code>
+        </pre>
+      </div>
+    );
+  }
+}
+
+export const MouseAndTextHOC = withMouse(extendComponent(MouseAndText));
