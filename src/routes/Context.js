@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react';
 
 import {
   CompanyProvider,
   Company
-} from "../patterns/Context/contextComponents/Company";
+} from '../patterns/Context/contextComponents/Company';
 import {
   ThemeProvider,
   DivWithTheme
-} from "../patterns/Context/contextComponents/Theme";
+} from '../patterns/Context/contextComponents/Theme';
 
 import {
   CombinedProviders,
   DivWithThemeAndCompany
-} from "../patterns/Context/contextComponents/ComanyAndTheme";
+} from '../patterns/Context/contextComponents/ComanyAndTheme';
 
 const Context = () => (
-  <div style={{ border: "5px solid green" }}>
+  <div style={{ border: '5px solid green' }}>
     <CompanyProvider>
       <Company />
     </CompanyProvider>
