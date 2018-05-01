@@ -1,15 +1,17 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { ThemeContext } from "../Context";
+import { ThemeContext } from '../Context';
 
 const { Provider, Consumer } = ThemeContext;
 
+// Our provider that will 'provide' the data that we
+// are wanting to pass to each component
 export class ThemeProvider extends Component {
   constructor() {
     super();
 
     this.state = {
-      theme: "#787878"
+      theme: '#787878'
     };
 
     this.handleThemeChange = this.handleThemeChange.bind(this);
@@ -26,16 +28,18 @@ export class ThemeProvider extends Component {
   }
 }
 
+// a component that's consuming the data from the provider
+
 export const DivWithTheme = () => (
   <Consumer>
     {context => (
       <div
         style={{
           background: context.theme,
-          height: "200px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
+          height: '200px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
       >
         <select onChange={e => context.changeTheme(e.target.value)}>

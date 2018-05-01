@@ -1,3 +1,6 @@
+// We can combine our context just like we can combine reducers
+// this allows us to share data without repetition.
+
 import React from 'react';
 
 import { ThemeContext, CompanyContext } from '../Context';
@@ -8,11 +11,15 @@ import { ThemeProvider } from './Theme';
 const ThemeConsumer = ThemeContext.Consumer;
 const CompanyConsumer = CompanyContext.Consumer;
 
+// combined provider component
+
 export const CombinedProviders = props => (
   <ThemeProvider>
     <CompanyProvider>{props.children}</CompanyProvider>
   </ThemeProvider>
 );
+
+// combined consumer component
 
 const CombinedConsumers = props => (
   <ThemeConsumer>
@@ -23,6 +30,8 @@ const CombinedConsumers = props => (
     )}
   </ThemeConsumer>
 );
+
+// component that consuming data from both providers
 
 export const DivWithThemeAndCompany = () => (
   <CombinedConsumers>

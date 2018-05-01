@@ -1,20 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { CompanyContext } from "../Context";
+import { CompanyContext } from '../Context';
 
 const { Provider, Consumer } = CompanyContext;
 
+// Our provider component that is 'providing' the data
+// to be consumed
 export class CompanyProvider extends Component {
   constructor() {
     super();
 
     this.state = {
       dmTeam: [
-        { name: "Mark Hideo", position: "President" },
-        { name: "Tim Newhard", position: "VP of Education" },
-        { name: "Steven Isbell", position: "Lead Instructor" },
-        { name: "Shea Close", position: "Instructor" },
-        { name: "Erik Golden", position: "Lead Mentor" }
+        { name: 'Mark Hideo', position: 'President' },
+        { name: 'Tim Newhard', position: 'VP of Education' },
+        { name: 'Steven Isbell', position: 'Lead Instructor' },
+        { name: 'Shea Close', position: 'Instructor' },
+        { name: 'Erik Golden', position: 'Lead Mentor' }
       ]
     };
   }
@@ -23,6 +25,9 @@ export class CompanyProvider extends Component {
   }
 }
 
+// a component tree that shows that no matter how many components
+// deep our tree goes, we can pass data via the consumer to just the
+// components that need it, no props drilling
 export const Company = () => <Organization />;
 
 const Organization = () => <Team />;
@@ -34,18 +39,18 @@ const Team = () => (
         <h1>The DevMountain Team:</h1>
         <div
           style={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "center"
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
         >
           {context.dmTeam.map(member => (
             <div
               style={{
-                border: "1px solid black",
-                margin: "10px",
-                padding: "10px"
+                border: '1px solid black',
+                margin: '10px',
+                padding: '10px'
               }}
             >
               <p>{member.name}</p>
