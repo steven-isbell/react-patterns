@@ -1,5 +1,7 @@
 # Context API
 
+## EDIT: The context api is fully supported in React since 16.3. There is no need to do any additional setup to begin using it.
+
 The Context API is an existing, but experimental API that exists within React. The official React documentation for the API currently has the headline of `Why Not To Use The Context API`; it continues,
 
 ```
@@ -8,11 +10,11 @@ The vast majority of applications do not need to use context.
 If you want your application to be stable, don’t use context.
 It is an experimental API and it is likely to break in future releases of React.
 ```
-With that kind of warning, it would appear that the API is rarely used; however, there are many libraries you have probbaly used that take advantage of this powerful system.
+With that kind of warning, it would appear that the API is rarely used; however, there are many libraries you have probably used that take advantage of this powerful system.
 
 * react-redux
 * react-router
-* glamourous
+* material-ui
 
 These libraries utilize the Context API to create powerful, useful features for our react applications. This also means they absorbed the risk. With each change to the experimental API, the team managing the library would make updates, meaning we never had to worry about our code being invalidated because we weren't being exposed directly to the Context API.
 
