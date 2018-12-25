@@ -1,6 +1,7 @@
 # React Patterns
 
-A repo demonstrating common patterns found in react.
+A repository demonstrating common patterns found in react.
+Each directory is a small demonstration of the following patterns: 
 * Render Props
 * Higher Order Components
 * Context API (>16.3)
